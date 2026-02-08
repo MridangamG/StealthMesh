@@ -1,0 +1,24 @@
+
+\begin{table*}[htbp]
+\centering
+\caption{Model Performance Comparison Across All Datasets}
+\label{tab:model_performance}
+\begin{tabular}{llccccc}
+\hline
+\textbf{Dataset} & \textbf{Model} & \textbf{Accuracy (\%)} & \textbf{Precision (\%)} & \textbf{Recall (\%)} & \textbf{F1-Score (\%)} & \textbf{ROC-AUC (\%)} \\
+\hline
+CICIDS_2017 & RandomForest & 99.50 & 98.18 & 99.11 & 98.64 & 99.93 \\
+CICIDS_2017 & XGBoost & 99.58 & 97.98 & 99.78 & 98.87 & 99.98 \\
+CICIDS_2017 & NeuralNetwork & 97.29 & 87.79 & 99.17 & 93.13 & 99.85 \\
+Network_10Class & RandomForest & 98.94 & 98.98 & 98.94 & 98.95 & 99.98 \\
+Network_10Class & XGBoost & 98.91 & 98.92 & 98.91 & 98.91 & 99.99 \\
+Network_10Class & NeuralNetwork & 97.02 & 97.06 & 97.02 & 97.01 & 99.90 \\
+ZeroDay_V1V2 & RandomForest & 100.00 & 100.00 & 100.00 & 100.00 & 100.00 \\
+ZeroDay_V1V2 & XGBoost & 100.00 & 100.00 & 100.00 & 100.00 & 100.00 \\
+ZeroDay_V1V2 & NeuralNetwork & 100.00 & 100.00 & 100.00 & 100.00 & 100.00 \\
+Ransomware & RandomForest & 97.73 & 97.74 & 97.73 & 97.72 & 99.68 \\
+Ransomware & XGBoost & 97.39 & 97.40 & 97.39 & 97.39 & 99.76 \\
+Ransomware & NeuralNetwork & 96.87 & 96.89 & 96.87 & 96.86 & 99.71 \\
+\hline
+\end{tabular}
+\end{table*}

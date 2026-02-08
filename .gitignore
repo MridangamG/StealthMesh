@@ -1,0 +1,46 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Datasets (too large for GitHub)
+CIC-IDS-2017 Dataset/
+Data Sets/
+
+# Processed data (large numpy files)
+processed_data/*.npy
+processed_data/*.pkl
+
+# Trained models (large binary files)
+models/*.pkl
+models/*.h5
+models/*.pt
+
+# Logs
+logs/*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/
