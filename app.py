@@ -107,7 +107,9 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("##### System Status")
     st.markdown("🟢 All modules operational")
-    st.markdown(f"📁 Models: `{len([f for f in os.listdir('models') if f.endswith('.pkl')])}` loaded")
+    _models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models')
+    _model_count = len([f for f in os.listdir(_models_dir) if f.endswith('.pkl')]) if os.path.isdir(_models_dir) else 0
+    st.markdown(f"📁 Models: `{_model_count}` loaded")
     st.markdown(f"📊 Datasets: `4` processed")
 
 
