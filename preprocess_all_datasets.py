@@ -140,11 +140,14 @@ def preprocess_zero_day_datasets():
     print(df_v2['Prediction'].value_counts())
     
     # Define feature columns (numeric only)
+    # IMPORTANT: 'Family' and 'Anomaly Score' are removed to prevent data leakage
+    #   - Family: maps 1:1 to label (WannaCry/DDoS/Phishing=Attack, Normal=NoAttack)
+    #   - Anomaly Score: zero overlap between classes (Attack:0.6-1.0, Benign:0.0-0.1)
     label_col = 'Prediction'
     drop_cols = ['Time', 'SeddAddress', 'ExpAddress', 'IP Address', 'Geolocation',
                  'Logistics ID', 'Event Description', 'Session ID', 'User-Agent',
                  'Application Layer Data', 'Prediction', 'Threat Level', 'Response Time',
-                 'Data Transfer Rate']
+                 'Data Transfer Rate', 'Family', 'Anomaly Score']
     
     # Process both datasets
     def process_df(df, name):
