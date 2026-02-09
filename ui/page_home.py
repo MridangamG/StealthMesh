@@ -63,8 +63,8 @@ def render():
     with col_right:
         st.subheader("📈 Dataset Coverage")
         dataset_info = {
-            "Dataset": ["CICIDS 2017", "Network 10-Class", "Zero-Day V1+V2", "Ransomware"],
-            "Samples": [45365, 211043, 497000, 149043],
+            "Dataset": ["CICIDS 2017", "Network 10-Class", "Ransomware"],
+            "Samples": [45365, 211043, 149043],
         }
         dfd = pd.DataFrame(dataset_info)
         fig2 = px.pie(

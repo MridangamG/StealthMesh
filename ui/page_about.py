@@ -45,8 +45,8 @@ def render():
          "and honeypot deployment. Attacker reconnaissance becomes useless.",
          "Other Papers: Static system configuration"),
         ("📊 Multi-Dataset Validation",
-         "Validated across 4 diverse datasets (902,451 samples) covering DDoS, ransomware, "
-         "zero-day, and multi-class attacks. Proves generalization beyond a single dataset.",
+         "Validated across 3 diverse datasets (405,451 samples) covering DDoS, ransomware, "
+         "and multi-class attacks. Proves generalization beyond a single dataset.",
          "Other Papers: Typically test on only 1 dataset"),
         ("💰 MSME-Focused Design",
          "Designed for resource-constrained environments. Lightweight, no specialized hardware, "

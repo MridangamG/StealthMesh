@@ -173,9 +173,9 @@ def render():
 
         pipeline_steps = [
             ("📥 Data Loading", [
-                "Load CSV files (CICIDS 2017, Network, Zero-Day, Ransomware)",
+                "Load CSV files (CICIDS 2017, Network, Ransomware)",
                 "Merge multiple CSV files per dataset",
-                "Total: 902,451 samples across 4 datasets",
+                "Total: 405,451 samples across 3 datasets",
             ]),
             ("🧹 Data Cleaning", [
                 "Remove NaN values and infinite values",
@@ -186,7 +186,6 @@ def render():
             ("🏷️ Label Encoding", [
                 "Binary: BENIGN=0, Attack=1",
                 "Multi-class: LabelEncoder for 10+ classes",
-                "Zero-day: 'Attack Detected'=1, else=0",
             ]),
             ("⚙️ Feature Engineering", [
                 "Feature selection using mutual information",
@@ -221,12 +220,12 @@ def render():
 
         import pandas as pd
         ds = pd.DataFrame({
-            "Dataset": ["CICIDS 2017", "Network 10-Class", "Zero-Day V1+V2", "Ransomware"],
-            "Samples": ["45,365", "211,043", "497,000", "149,043"],
-            "Features": [40, 27, 12, 7],
-            "Classes": [2, 10, 2, 3],
-            "Type": ["Binary", "Multi-class", "Binary", "Multi-class"],
-            "Best Model": ["XGBoost", "RandomForest", "XGBoost", "RandomForest"],
-            "Best Accuracy": ["99.58%", "98.94%", "100.00%", "97.73%"],
+            "Dataset": ["CICIDS 2017", "Network 10-Class", "Ransomware"],
+            "Samples": ["45,365", "211,043", "149,043"],
+            "Features": [40, 27, 7],
+            "Classes": [2, 10, 3],
+            "Type": ["Binary", "Multi-class", "Multi-class"],
+            "Best Model": ["XGBoost", "RandomForest", "RandomForest"],
+            "Best Accuracy": ["99.58%", "98.94%", "97.73%"],
         })
         st.dataframe(ds, use_container_width=True, hide_index=True)

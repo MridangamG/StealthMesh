@@ -45,12 +45,6 @@ DATASETS = {
         'description': 'Network Attacks - 10 Classes',
         'classes': 10
     },
-    'ZeroDay': {
-        'prefix': 'zeroday',
-        'type': 'binary',
-        'description': 'Zero-Day Attack Detection (V1→V2)',
-        'classes': 2
-    },
     'Ransomware': {
         'prefix': 'ransomware',
         'type': 'multiclass',

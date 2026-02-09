@@ -110,7 +110,7 @@ with st.sidebar:
     _models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models')
     _model_count = len([f for f in os.listdir(_models_dir) if f.endswith('.pkl')]) if os.path.isdir(_models_dir) else 0
     st.markdown(f"📁 Models: `{_model_count}` loaded")
-    st.markdown(f"📊 Datasets: `4` processed")
+    st.markdown(f"📊 Datasets: `3` processed")
 
 
 # ── Page Router ─────────────────────────────────────────────

@@ -29,7 +29,6 @@ os.makedirs(FIGURES_DIR, exist_ok=True)
 DATASETS = {
     'CICIDS_2017': {'prefix': 'binary', 'name': 'CICIDS 2017', 'classes': ['Benign', 'Attack']},
     'Network_10Class': {'prefix': 'network_multiclass', 'name': 'Network (10-Class)', 'classes': None},
-    'ZeroDay_V1V2': {'prefix': 'zeroday', 'name': 'Zero-Day', 'classes': ['No Attack', 'Attack']},
     'Ransomware': {'prefix': 'ransomware', 'name': 'Ransomware', 'classes': None}
 }
 
@@ -99,11 +98,11 @@ def plot_dataset_summary():
     print("2. Creating dataset summary chart...")
     
     dataset_info = {
-        'Dataset': ['CICIDS 2017', 'Network 10-Class', 'Zero-Day (V1+V2)', 'Ransomware'],
-        'Samples': [45365, 211043, 497000, 149043],
-        'Features': [40, 27, 12, 7],
-        'Classes': [2, 10, 2, 3],
-        'Type': ['Binary', 'Multi-class', 'Binary', 'Multi-class']
+        'Dataset': ['CICIDS 2017', 'Network 10-Class', 'Ransomware'],
+        'Samples': [45365, 211043, 149043],
+        'Features': [40, 27, 7],
+        'Classes': [2, 10, 3],
+        'Type': ['Binary', 'Multi-class', 'Multi-class']
     }
     df = pd.DataFrame(dataset_info)
     
@@ -154,7 +153,6 @@ def plot_confusion_matrices_all():
     datasets_to_plot = [
         ('binary', 'CICIDS 2017', 'xgboost', ['Benign', 'Attack']),
         ('network_multiclass', 'Network 10-Class', 'randomforest', None),
-        ('zeroday', 'Zero-Day', 'xgboost', ['No Attack', 'Attack']),
         ('ransomware', 'Ransomware', 'randomforest', None)
     ]
     
@@ -268,10 +266,9 @@ def generate_latex_tables():
 \\hline
 CICIDS 2017 & 45,365 & 40 & 2 & Binary \\\\
 Network Attacks & 211,043 & 27 & 10 & Multi-class \\\\
-Zero-Day (V1+V2) & 497,000 & 12 & 2 & Binary \\\\
 Ransomware & 149,043 & 7 & 3 & Multi-class \\\\
 \\hline
-\\textbf{Total} & \\textbf{902,451} & - & - & - \\\\
+\\textbf{Total} & \\textbf{405,451} & - & - & - \\\\
 \\hline
 \\end{tabular}
 \\end{table}

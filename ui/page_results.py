@@ -207,7 +207,6 @@ def render():
         prefix_map = {
             "CICIDS_2017": "binary",
             "Network_10Class": "network_multiclass",
-            "ZeroDay_V1V2": "zeroday",
             "Ransomware": "ransomware",
         }
         model_map = {

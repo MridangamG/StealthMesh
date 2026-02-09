@@ -295,10 +295,7 @@ def main():
     # 1. train_test_network.csv (10-class)
     preprocess_train_test_network()
     
-    # 2. Zero-Day datasets (binary)
-    preprocess_zero_day_datasets()
-    
-    # 3. final(2).csv (ransomware)
+    # 2. final(2).csv (ransomware)
     preprocess_final_dataset()
     
     print("\n" + "="*70)
@@ -307,10 +304,9 @@ def main():
     
     # Summary
     print("\nPreprocessed datasets:")
-    print("  1. binary_*          - CICIDS 2017 (already done)")
+    print("  1. binary_*             - CICIDS 2017 (already done)")
     print("  2. network_multiclass_* - train_test_network.csv (10-class)")
-    print("  3. zeroday_*         - Zero-Day V1/V2 (binary)")
-    print("  4. ransomware_*      - final(2).csv")
+    print("  3. ransomware_*         - final(2).csv")
     
     # List files
     print(f"\nFiles in {PROCESSED_DIR}:")

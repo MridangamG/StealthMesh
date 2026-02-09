@@ -23,16 +23,14 @@
 |---------|---------|----------|---------|------|
 | CICIDS 2017 | 45,365 | 40 | 2 | Binary |
 | Network 10-Class | 211,043 | 27 | 10 | Multi-class |
-| Zero-Day (V1+V2) | 497,000 | 12 | 2 | Binary |
 | Ransomware | 149,043 | 7 | 3 | Multi-class |
-| **Total** | **902,451** | - | - | - |
+| **Total** | **405,451** | - | - | - |
 
 ### Best Model Performance per Dataset
 | Dataset | Best Model | Accuracy | F1-Score | ROC-AUC |
 |---------|------------|----------|----------|---------|
 | CICIDS 2017 | XGBoost | **99.58%** | 99.27% | 99.86% |
 | Network 10-Class | RandomForest | **98.94%** | 97.48% | 99.92% |
-| Zero-Day | XGBoost | **100.00%** | 100.00% | 100.00% |
 | Ransomware | RandomForest | **97.73%** | 93.83% | 99.44% |
 
 ### Detailed Results (All Models)
@@ -44,9 +42,6 @@
 | Network_10Class | **RandomForest** | **98.94%** | 97.47% | 98.94% | 97.48% | 99.92% |
 | Network_10Class | XGBoost | 98.94% | 97.45% | 98.94% | 97.47% | 99.92% |
 | Network_10Class | NeuralNetwork | 98.53% | 96.76% | 98.53% | 97.05% | 99.89% |
-| ZeroDay_V1V2 | RandomForest | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% |
-| ZeroDay_V1V2 | **XGBoost** | **100.00%** | 100.00% | 100.00% | 100.00% | 100.00% |
-| ZeroDay_V1V2 | NeuralNetwork | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% |
 | Ransomware | **RandomForest** | **97.73%** | 96.42% | 97.73% | 93.83% | 99.44% |
 | Ransomware | XGBoost | 97.46% | 96.09% | 97.46% | 93.33% | 99.39% |
 | Ransomware | NeuralNetwork | 96.99% | 95.75% | 96.99% | 92.15% | 99.32% |
@@ -58,8 +53,6 @@ StealthMesh/
 ├── CIC-IDS-2017 Dataset/          # CICIDS 2017 dataset (8 CSV files)
 ├── Data Sets/                     # Additional datasets
 │   ├── train_test_network.csv     # 10-class network attacks (211k samples)
-│   ├── zero_day_attack_detection_dataset_V1-400k.csv  # Zero-day V1
-│   ├── zero_day_attack_detection_dataset_V2_97k.csv   # Zero-day V2
 │   └── final(2).csv               # Ransomware/Botnet (149k samples)
 ├── src/
 │   ├── preprocessing/             # Data preprocessing pipeline
@@ -85,12 +78,10 @@ StealthMesh/
 ├── processed_data/                # Preprocessed data files
 │   ├── binary_*.npy               # CICIDS 2017 binary classification
 │   ├── network_multiclass_*.npy   # Network 10-class classification
-│   ├── zeroday_*.npy              # Zero-day detection
 │   └── ransomware_*.npy           # Ransomware detection
 ├── models/                        # Trained model files (12 models)
 │   ├── binary_*_model.pkl         # CICIDS 2017 models
 │   ├── network_multiclass_*_model.pkl  # Network attack models
-│   ├── zeroday_*_model.pkl        # Zero-day detection models
 │   └── ransomware_*_model.pkl     # Ransomware detection models
 ├── results/
 │   ├── model_comparison.csv       # CICIDS 2017 results
@@ -153,7 +144,7 @@ python generate_visualizations.py
 
 ## 📚 Dataset Information
 
-This project uses **4 datasets** for comprehensive cyber threat detection evaluation:
+This project uses **3 datasets** for comprehensive cyber threat detection evaluation:
 
 ### 1. CICIDS 2017 (Binary Classification)
 **Canadian Institute for Cybersecurity Intrusion Detection Dataset**
@@ -179,19 +170,7 @@ This project uses **4 datasets** for comprehensive cyber threat detection evalua
 
 **Attack Classes:** backdoor, ddos, dos, injection, mitm, normal, password, ransomware, scanning, xss
 
-### 3. Zero-Day Attack Detection (Binary Classification)
-**Zero-Day Attack Detection Dataset V1 & V2**
-
-| Property | Value |
-|----------|-------|
-| Total Records (V1) | 400,000 |
-| Total Records (V2) | 97,000 |
-| Combined | 497,000 |
-| Features | 12 |
-| Classes | 2 (Attack Detected, No Attack) |
-| Attack Ratio | 38% Attack, 62% Benign |
-
-### 4. Ransomware/Botnet Detection (Multi-class Classification)
+### 3. Ransomware/Botnet Detection (Multi-class Classification)
 **Ransomware and Botnet Family Classification**
 
 | Property | Value |

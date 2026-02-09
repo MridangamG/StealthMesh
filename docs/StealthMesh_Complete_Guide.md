@@ -40,7 +40,6 @@ The project uses **4 datasets** containing network traffic data:
 |---------|------------------|----------|
 | CICIDS 2017 | DDoS, PortScan, Brute Force attacks | General intrusion detection |
 | Network 10-Class | 10 different attack types | Multi-attack classification |
-| Zero-Day | Unknown/new attacks | Detecting novel threats |
 | Ransomware | Ransomware & Botnet traffic | Malware detection |
 
 ---
@@ -407,9 +406,9 @@ EXISTING RESEARCH PROBLEM:
 └── Overfitting to specific dataset patterns
 
 OUR SOLUTION:
-├── 4 diverse datasets
-├── 902,451 total samples
-├── Different attack types (DDoS, Ransomware, Zero-day, etc.)
+├── 3 diverse datasets
+├── 405,451 total samples
+├── Different attack types (DDoS, Ransomware, Multi-class, etc.)
 └── Proves generalization capability
 ```
 
@@ -643,16 +642,14 @@ Use these in your paper's Introduction and Contribution sections:
 |---------|---------|----------|---------|------|
 | CICIDS 2017 | 45,365 | 40 | 2 | Binary |
 | Network 10-Class | 211,043 | 27 | 10 | Multi-class |
-| Zero-Day (V1+V2) | 497,000 | 12 | 2 | Binary |
 | Ransomware | 149,043 | 7 | 3 | Multi-class |
-| **Total** | **902,451** | - | - | - |
+| **Total** | **405,451** | - | - | - |
 
 ### Best Model Performance per Dataset
 | Dataset | Best Model | Accuracy | F1-Score | ROC-AUC |
 |---------|------------|----------|----------|---------|
 | CICIDS 2017 | XGBoost | **99.58%** | 99.27% | 99.86% |
 | Network 10-Class | RandomForest | **98.94%** | 97.48% | 99.92% |
-| Zero-Day | XGBoost | **100.00%** | 100.00% | 100.00% |
 | Ransomware | RandomForest | **97.73%** | 93.83% | 99.44% |
 
 ---
